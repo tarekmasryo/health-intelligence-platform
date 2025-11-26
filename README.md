@@ -1,97 +1,150 @@
-# 🧬 Health Intelligence Platform
+# 🌐 Digital Habits and Mental Health  
+### Exploring the Impact of Screen Time and Digital Behavior on Psychological Wellbeing 🤖  
 
-[![Streamlit](https://img.shields.io/badge/Powered%20by-Streamlit-FF4B4B)](https://streamlit.io/)  
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-orange.svg)](LICENSE)  
-[![Made with ❤️ by Tarek Masryo](https://img.shields.io/badge/Made%20by-Tarek%20Masryo-blue)](https://github.com/tarekmasryo)
-
----
-
-## 📌 Overview
-
-The Health Intelligence Platform is an interactive analytics app built with Streamlit and Plotly to:
-
-- Monitor digital wellbeing and mental health risk at population level  
-- Analyze behavioral patterns (screen time, sleep, stress, social usage, activity)  
-- Run what-if scenarios with an interactive risk simulator  
-- Produce clinical-style summary reports for high-risk cohorts  
-
-Data is generated programmatically inside the app to enable safe experimentation and scenario design without handling real user records.
+A complete data science project examining how **digital lifestyles** influence **mental health** outcomes — including anxiety, depression, stress, happiness, focus, and productivity.  
+Includes a tabular dataset of **3,500 synthetic participant records** with **24 research-inspired features**, plus a reproducible notebook for **EDA, feature engineering, modeling, and explainability**.
 
 ---
 
-## 🔑 Key Modules
+## 🔎 Important Note on Scoring
 
-### 🎯 Executive Dashboard
-- Core KPIs: active users, high-risk share, model AUC, behavioral averages  
-- Risk score distribution with configurable threshold  
-- 90-day trends for screen time, stress, wellbeing, sleep, engagement, high-risk counts  
-- Demographic breakdowns by age group, gender, location, occupation  
+Psychological and behavioral indicators  
+(e.g., `anxiety_score`, `depression_score`, `stress_level`, `happiness_score`, `focus_score`, `productivity_score`, `digital_dependence_score`)  
+are generated as **continuous synthetic scores modeled on a broad 0–100 range**, **not** fixed **0–10 Likert items**.
 
-### 🧠 Risk Analytics
-- Correlation heatmap for key risk drivers  
-- Risk distributions by segment (Low / Moderate / High)  
-- Confusion matrix and ROC curve with AUC  
-- Conceptual feature importance and focused scatter plots (screen vs sleep, stress vs wellbeing)  
-
-### 📱 Behavioral Insights
-- 24-hour circadian patterns (screen time, notifications, stress, energy)  
-- App usage composition and digital interaction metrics across segments  
-- Physical vs digital balance and quick indicators (sleep deficit, high stress, inactivity)  
-
-### 🧪 Scenario Simulator
-- Single-profile simulator with sliders for digital, health, physical, and social variables  
-- Real-time risk score, risk segment, intervention flag, and population percentile  
-- Scenario vs population comparison and radar profile view  
-- Pre-defined intervention bundles (digital reset, sleep protocol, holistic plan) with AI-style recommendations  
-
-### 🏥 Clinical Reports
-- Ranked list of highest-risk users with key attributes  
-- One-click CSV export of high-risk cohort  
-- Summary tables for risk segments, mental health metrics, and behavioral metrics  
+This provides richer variance and makes the dataset more suitable for ML modeling and behavioral analytics.
 
 ---
 
-## 🧠 Data & Risk Engine
+## 🧩 Project Overview
 
-The platform constructs a rich data space including:
-
-- Demographics, digital behavior, lifestyle, mental health scores, social factors, engagement signals  
-- Time-based structures: 90-day history and 24-hour patterns  
-
-Risk is computed via a logistic risk function over weighted combinations of:
-
-- Screen exposure and digital intensity  
-- Stress, anxiety, depression, wellbeing, mood, energy  
-- Sleep, activity, outdoor time  
-- Social support and loneliness  
-
-This produces:
-
-- `risk_score` ∈ (0, 1)  
-- `high_risk` label  
-- `risk_segment` ∈ {Low, Moderate, High}  
-
-The design focuses on interpretability and controllable experimentation in digital wellbeing analytics. It does not replace professional clinical judgement.
+| Component | Description |
+|:--|:--|
+| **Dataset** | 24 variables covering demographics, digital activity, and mental health indicators. |
+| **Notebook** | Full ML pipeline (EDA → Feature Engineering → Modeling → Explainability). |
+| **Models** | Logistic Regression · Random Forest · XGBoost (GPU-ready). |
+| **Goal** | Predict high mental-health risk from behavioral and psychological patterns. |
 
 ---
 
-## 🧩 Tech Stack
+## 📊 Dataset Summary
 
-- Python  
-- Streamlit – application framework  
-- NumPy – numerical computations and generators  
-- pandas – data manipulation and aggregations  
-- Plotly – interactive visualizations  
-- scikit-learn (metrics) – AUC, PR, Brier score, ROC, confusion matrix  
+| Metric | Value |
+|:--|:--|
+| Rows | **3,500** |
+| Columns | **24** |
+| Target | **high_risk_flag** |
+| Type | Tabular (CSV) |
 
 ---
 
-## 🚀 Getting Started
+## 🧠 Feature Groups
 
-Clone the repository and install dependencies:
+### 🧬 Demographics  
+Age · Gender · Region · Income Level · Education Level  
+
+### 💻 Digital Behavior  
+Daily Screen Time · Phone Unlocks · Notifications · Social Media Hours · Study Time  
+
+### 🧘 Mental Health Indicators  
+Anxiety · Depression · Stress · Happiness · Focus · Productivity  
+
+### ⚠️ Risk Indicator  
+`high_risk_flag` — a binary label derived via a **multi-factor wellbeing score** combining digital intensity, emotional state, and cognitive balance.
+
+---
+
+## 📘 Target Definition
+
+The target variable **`high_risk_flag`** represents individuals with increased mental-health vulnerability.  
+It is defined using a scoring rule that blends:  
+- High digital activity (screen time, notifications, unlocks)  
+- Elevated stress/anxiety levels  
+- Lower happiness/focus scores  
+
+Approximate distribution: **15–20% high-risk**, reflecting prevalence reported in behavioral research.
+
+---
+
+## 📸 Dashboard Preview
+
+### 1️⃣ AI Health Intelligence — Hero Overview
+
+<p align="center">
+  <img src="assets/ai-health-hero.png" alt="AI Health Intelligence Platform — Hero overview with key KPIs" />
+</p>
+
+---
+
+### 2️⃣ AI-Powered Insights Cards
+
+<p align="center">
+  <img src="assets/ai-insights-cards.png" alt="AI-powered insights cards for risk, stress, digital exposure, and model performance" />
+</p>
+
+---
+
+### 3️⃣ Executive Risk Overview
+
+<p align="center">
+  <img src="assets/executive-risk-overview.png" alt="Risk score distribution and risk segment donut chart" />
+</p>
+
+---
+
+### 4️⃣ 90-Day Population Health Trends
+
+<p align="center">
+  <img src="assets/population-health-trends.png" alt="90-day trends for screen time, stress, wellbeing, sleep, high-risk population, and engagement" />
+</p>
+
+---
+
+### 5️⃣ Demographic Risk Breakdown
+
+<p align="center">
+  <img src="assets/demographic-risk-breakdown.png" alt="Age, gender, location, and occupation risk distributions" />
+</p>
+
+---
+
+### 6️⃣ Digital Behavior & Activity Balance
+
+<p align="center">
+  <img src="assets/digital-behavior-balance.png" alt="Hourly activity patterns, app usage, digital interaction metrics, and physical activity balance" />
+</p>
+
+---
+
+### 7️⃣ Model Insights & Correlations
+
+<p align="center">
+  <img src="assets/model-insights-and-correlations.png" alt="Feature importance and relationships such as screen time vs sleep and stress vs wellbeing" />
+</p>
+
+---
+
+### 8️⃣ Scenario Simulator — Individual Risk Profile
+
+<p align="center">
+  <img src="assets/scenario-simulator.png" alt="Scenario simulator with sliders, risk score, risk category, and radar profile view" />
+</p>
+
+---
+
+## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/tarekmasryo/health-intelligence-platform.git
-cd health-intelligence-platform
+# Clone
+git clone https://github.com/TarekMasryo/digital-habits-mental-health.git
+cd digital-habits-mental-health
+
+# (Optional) create venv
+python -m venv .venv && source .venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
-streamlit run app.py
+
+# Run the main notebook
+jupyter notebook notebooks/predicting-wellbeing-risk.ipynb
+```
