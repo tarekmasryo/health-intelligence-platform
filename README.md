@@ -1,4 +1,8 @@
 # 🌐 Digital Habits and Mental Health  
+
+[![Streamlit](https://img.shields.io/badge/Powered%20by-Streamlit-FF4B4B)](https://streamlit.io/)  
+[![Made with ❤️ by Tarek Masryo](https://img.shields.io/badge/Made%20by-Tarek%20Masryo-blue)](https://github.com/tarekmasryo)
+
 ### Exploring the Impact of Screen Time and Digital Behavior on Psychological Wellbeing 🤖  
 
 A complete data science project examining how **digital lifestyles** influence **mental health** outcomes — including anxiety, depression, stress, happiness, focus, and productivity.  
